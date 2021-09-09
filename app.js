@@ -4,7 +4,7 @@ const currentPrice = document.querySelector("#current-price");
 const checkButton =  document.querySelector("#check-button");
 const outputBox = document.querySelector("#output-box");
 
-
+outputBox.style.display = "none";
 
 function calculateProfitOrLoss(initial, quantity, current){
      
@@ -12,15 +12,18 @@ function calculateProfitOrLoss(initial, quantity, current){
         // write for loss
         var loss = (initial - current) * quantity;
         var lossPercentage = (loss/initial) * 100;
-        displayOutput(`this is the loss ${loss} and this is percentage: ${lossPercentage}%.`)
+        outputBox.style.color = "red";
+        displayOutput(`Opps!😞, Sorry to say you have made a loss of ${loss} and your loss percentage is ${lossPercentage}%. Better luck next time🤗`)
     } else if (current > initial) {
         // write for profit
     var profit = (current - initial) * quantity;
     var profitPercentage = (profit/initial)*100;
-    displayOutput(`this is the profit ${profit} and this is percentage: ${profitPercentage}%.`)
+    outputBox.style.color = "green";
+    displayOutput(`Yaay!!🤑 you have made a Profit of ${profit} and your profit percentage, that is a whooping ${profitPercentage}%. Party time!🥳`);
     } else {
         // write for no pain no gain
-        displayOutput(`no pain no gain no gain no pain.`);
+        outputBox.style.color = "white";
+        displayOutput(`😐No Pain No Gain, and No Gain No Pain. Sounds like a gingle🤣, But you should invest better😃.`);
     }
      
 }
@@ -34,6 +37,7 @@ var initialInput = Number(initialPrice.value);
 var quantityInput = Number(stocksQuantity.value);
 var currentInput = Number(currentPrice.value);
 
+outputBox.style.display = "block";
 calculateProfitOrLoss(initialInput, quantityInput, currentInput);
 }
 
