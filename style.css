@@ -11,13 +11,22 @@ body {
     text-align: center;
 }
 
+p {
+    text-align: center;
+    font-weight: 200;
+    color: grey;
+    margin: 2rem 2rem;
+    padding: 0rem 4rem;
+    font-style: italic;
+}
+
 h1 {
 	margin-bottom: 2rem;
 	color: var(--primary-color);
 }
 
 main{
-    margin-top: 4rem;
+    margin-top: 3rem;
 }
 
 label {
@@ -61,7 +70,7 @@ button {
 
 footer {
     text-align: center;
-    margin-top: 6rem;
+    margin-top: 1rem;
     color: white;
     font-size: 22px;
 }
