@@ -33,12 +33,24 @@ function displayOutput(message){
 }
 
 function clickHandler() {
-var initialInput = Number(initialPrice.value);
-var quantityInput = Number(stocksQuantity.value);
-var currentInput = Number(currentPrice.value);
 
-outputBox.style.display = "block";
-calculateProfitOrLoss(initialInput, quantityInput, currentInput);
+    var initialInput = Number(initialPrice.value);
+    var quantityInput = Number(stocksQuantity.value);
+    var currentInput = Number(currentPrice.value);
+    
+    console.log(initialInput) 
+
+    if (initialPrice.value <=0 || stocksQuantity.value <=0 || currentPrice.value <=0) {
+        outputBox.style.display = "block";
+        outputBox.style.color = "white";
+        displayOutput("please enter valid values");
+    } else {
+        outputBox.style.display = "block";
+        calculateProfitOrLoss(initialInput, quantityInput, currentInput);
+    }
+
 }
 
 checkButton.addEventListener("click", clickHandler);
+
+
