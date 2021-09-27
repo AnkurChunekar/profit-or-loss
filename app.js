@@ -11,13 +11,13 @@ function calculateProfitOrLoss(initial, quantity, current){
     if (initial > current) {
         // write for loss
         var loss = (initial - current) * quantity;
-        var lossPercentage = (loss/initial) * 100;
+        var lossPercentage = (loss/(initial*quantity)) * 100;
         outputBox.style.color = "red";
         displayOutput(`Opps!😞, Sorry to say you have made a loss of ${loss} and your loss percentage is ${lossPercentage.toFixed(2)}%. Better luck next time🤗`)
     } else if (current > initial) {
         // write for profit
     var profit = (current - initial) * quantity;
-    var profitPercentage = (profit/initial)*100;
+    var profitPercentage = (profit/(initial*quantity))*100;
     outputBox.style.color = "green";
     displayOutput(`Yaay!!🤑 you have made a Profit of ${profit} and your profit percentage, that is a whooping ${profitPercentage.toFixed(2)}%. Party time!🥳`);
     } else {
